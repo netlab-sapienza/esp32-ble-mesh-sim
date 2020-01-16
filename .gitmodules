@@ -1,0 +1,3 @@
+[submodule "extern/esp32-ble-mesh"]
+	path = extern/esp32-ble-mesh
+	url = https://github.com/BE-Mesh/esp32-ble-mesh.git
