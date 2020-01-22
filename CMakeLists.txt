@@ -5,6 +5,8 @@ project(esp32-ble-mesh-sim VERSION 1.0 LANGUAGES C CXX)
 set(ESP32_SIMULATION true)
 set(CMAKE_CXX_FLAGS "-Wall -Wno-write-strings")
 
+set(CMAKE_C_LINK_EXECUTABLE ${CMAKE_CXX_LINK_EXECUTABLE})
+
 
 # Add bemesh subdirectories
 set(ESP32_LIBS_PATH "${PROJECT_SOURCE_DIR}/extern/esp32-ble-mesh/components/bemesh")

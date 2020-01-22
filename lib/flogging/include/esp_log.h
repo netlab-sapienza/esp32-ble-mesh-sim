@@ -8,10 +8,11 @@
 
 #include <stdio.h>
 #include <stdint.h>
+#include <stdarg.h>
 
 #define GATTC_TAG "GATT_CLIENT"
 #define GATTS_TAG "GATT_CLIENT"
 
-void ESP_LOGI(const char* tag, char* format, ...);
-void ESP_LOGE(const char* tag, char* format, ...);
-void esp_log_buffer_hex(const char* tag, uint8_t* buffer, unsigned int buffer_len);
+void ESP_LOGI(char const* tag, char* format, ...);
+void ESP_LOGE(char const* tag, char* format, ...);
+void esp_log_buffer_hex(char const* tag, uint8_t* buffer, unsigned int buffer_len);
