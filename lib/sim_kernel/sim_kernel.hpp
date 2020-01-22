@@ -5,7 +5,7 @@
  */
 
 #pragma once
-#include "graph.hpp"
+#include "../../management/include/graph.hpp"
 
 namespace espsim {
   struct dev_params_t {
