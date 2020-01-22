@@ -7,14 +7,17 @@ set(CMAKE_CXX_FLAGS "-Wall -Wno-write-strings")
 
 
 # Add bemesh subdirectories
-set(ESP32_LIBS_PATH "${PROJECT_SOURCE_DIR}/extern/esp32-ble-mesh/components/bemesh")
-add_subdirectory("./lib")
+set(ESP32_LIBS_PATH "${PROJECT_SOURCE_DIR}/device/extern/esp32-ble-mesh/components/bemesh")
+add_subdirectory("./device/lib")
 add_subdirectory("${ESP32_LIBS_PATH}/common")
 add_subdirectory("${ESP32_LIBS_PATH}/mid-tier")
 add_subdirectory("${ESP32_LIBS_PATH}/master")
 add_subdirectory("${ESP32_LIBS_PATH}/slave")
 add_subdirectory("${ESP32_LIBS_PATH}/callbacks")
 add_subdirectory("${ESP32_LIBS_PATH}/firmware")
+
+add_subdirectory("./management_layer")
+add_subdirectory("./user_interface")
 add_subdirectory("./app")
 
 
