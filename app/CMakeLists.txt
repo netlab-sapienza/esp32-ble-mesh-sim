@@ -1,2 +1,13 @@
-add_executable(simulator simulator.cpp ${PROJECT_SOURCE_DIR}/user-interface/src/ui.cpp ../management-layer/include/device.h ../management-layer/src/device/device.cpp ../management-layer/include/device.h)
+
+# specify the C++ standard
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+
+message(STATUS "Project dir: ${PROJECT_SOURCE_DIR}")
+
+
+add_executable(thread_main thread_routine.cpp)
+target_link_libraries(thread_main LINK_PUBLIC Firmware Master Slave Kernel)
+
 
