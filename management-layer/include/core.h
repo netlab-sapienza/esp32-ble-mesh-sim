@@ -10,7 +10,7 @@
 
 namespace management {
 //int for eventual error codes
-    int initialize();
+    int initialize_network();
 
     int add_device();
 

@@ -87,6 +87,12 @@
 		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/app/simulator.cpp">
 			<Option target="simulator"/>
 		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/management-layer/include/device.h">
+			<Option target="simulator"/>
+		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/management-layer/src/device/device.cpp">
+			<Option target="simulator"/>
+		</Unit>
 		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/user-interface/src/ui.cpp">
 			<Option target="simulator"/>
 		</Unit>

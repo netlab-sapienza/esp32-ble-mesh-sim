@@ -2,7 +2,7 @@
  * graph.hpp
  */
 
-namespace espsim {
+namespace management {
   struct Edge {
     int src;
     int dest;
