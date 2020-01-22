@@ -8,6 +8,6 @@ message(STATUS "Project dir: ${PROJECT_SOURCE_DIR}")
 
 
 add_executable(thread_main thread_routine.cpp)
-target_link_libraries(thread_main LINK_PUBLIC Firmware Master Slave Kernel)
+target_link_libraries(thread_main LINK_PUBLIC Firmware Master Slave Kernel Ml_Graph Ml_Core)
 
 

@@ -23,8 +23,3 @@ add_subdirectory("./user_interface")
 add_subdirectory("./app")
 
 
-add_subdirectory(user-interface)
-add_subdirectory(management-layer)
-add_subdirectory(app)
-
-
