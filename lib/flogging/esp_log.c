@@ -6,14 +6,14 @@
 
 #include "esp_log.h"
 
-void ESP_LOGI(char* tag, const char* format, ...) {
+void ESP_LOGI(const char* tag, char* format, ...) {
   return;
 }
 
-void ESP_LOGE(char* tag, const char* format, ...) {
+void ESP_LOGE(const char* tag, char* format, ...) {
   return;
 }
 
-void esp_log_buffer_hex(char* tag, uint8_t* buffer, unsigned int buffer_len) {
+void esp_log_buffer_hex(const char* tag, uint8_t* buffer, unsigned int buffer_len) {
   return;
 }

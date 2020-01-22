@@ -3,12 +3,9 @@
  */
 
 #include <iostream>
-
-// Try to include a mid-tier bemesh lib
-#include "routing.hpp"
-#include "message_handler_v2.hpp"
+#include "firmware.hpp"
 
 int main(int argc, char** argv) {
-  std::cout << "Hello World!" << std::endl;
+  bemesh::main_routine(NULL);
 }
 

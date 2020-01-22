@@ -14,6 +14,7 @@ add_subdirectory("${ESP32_LIBS_PATH}/mid-tier")
 add_subdirectory("${ESP32_LIBS_PATH}/master")
 add_subdirectory("${ESP32_LIBS_PATH}/slave")
 add_subdirectory("${ESP32_LIBS_PATH}/callbacks")
+add_subdirectory("${ESP32_LIBS_PATH}/firmware")
 add_subdirectory("./app")
 
 

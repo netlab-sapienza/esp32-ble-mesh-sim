@@ -6,4 +6,6 @@
 
 #include "kernel.h"
 
+uint8_t wants_to_discover;
+
 
