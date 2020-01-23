@@ -20,7 +20,7 @@ namespace ml_graph {
   public:
     Graph(void);
 
-    void stampa();
+
     
     /*
      * add a new node in the graph.

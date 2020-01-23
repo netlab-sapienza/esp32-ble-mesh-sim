@@ -8,9 +8,6 @@
 
 namespace ml_graph {
     class Node {
-        int src;
-        int dest;
-        int weight;
 
         //todo
     };

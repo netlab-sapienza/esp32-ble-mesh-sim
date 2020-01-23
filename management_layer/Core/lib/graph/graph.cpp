@@ -7,8 +7,5 @@
 namespace ml_graph {
     Graph::Graph() {
     }
-    void Graph::stampa() {
-        std::cout <<"AAAAf" <<std::endl;
-    }
 
 }
