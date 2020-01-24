@@ -9,74 +9,75 @@
 namespace ml_graph {
 
 
-    template<typename T>
+    template<class T>
     Graph<T>::Graph() {
-
+        std::cout << "Costruisco \n";
     }
 
-    template<typename T>
+
+    template<class T>
     int Graph<T>::add_client(uint8_t *node_mac, T *node_data){
         return 0;
     }
 
-    template<typename T>
+    template<class T>
     int Graph<T>::add_server(uint8_t *node_mac, T *node_data){
         return 0;
     }
 
-    template<typename T>
+    template<class T>
     int Graph<T>::add_edge(uint8_t *t_src, uint8_t *t_dest) {
         return 0;
     }
 
-    template<typename T>
+    template<class T>
     int Graph<T>::remove_client_node(uint8_t *node_mac, T *node_data) {
         return 0;
     }
 
-    template<typename T>
+    template<class T>
     int Graph<T>::remove_server_node(uint8_t *node_mac, T *node_data) {
         return 0;
     }
 
-    template<typename T>
+    template<class T>
     int Graph<T>::remove_edge(uint8_t *t_src, uint8_t *t_dest){
         return 0;
     }
 
-    template<typename T>
+    template<class T>
     std::vector<uint8_t> Graph<T>::active_clients(void) const{
         std::vector<uint8_t> temp;
         return  temp;
     }
 
-    template<typename T>
+    template<class T>
     std::vector<uint8_t> Graph<T>::active_servers(void) const{
         std::vector<uint8_t> temp;
         return  temp;
     }
 
-    template<typename T>
+    template<class T>
     std::vector<T*> Graph<T>::scan() const{
         std::vector<T*> temp;
         return  temp;
     }
 
     //UI side
-    template<typename T>
+    template<class T>
     std::map<uint8_t, std::map<uint8_t, Edge>>* Graph<T>::read_edge_map() {
         std::map<uint8_t, std::map<uint8_t, Edge>>* temp;
         return temp;
     }
 
-    template<typename T>
+    template<class T>
     std::vector<uint8_t, T *>* Graph<T>::get_connections(uint8_t node) {
         std::vector<uint8_t, T *>* temp;
         return temp;
 
     }
 
-    template<typename T>
+    template<class T>
     void Graph<T>::printGraph() {
 
         std::cout<< "Print graph \n";
@@ -91,6 +92,11 @@ namespace ml_graph {
             }
             std::cout<<std::endl;
         }
+    }
+
+    void TemporaryFunction ()
+    {
+        Graph<int> TempObj;
     }
 
 }

@@ -7,9 +7,11 @@
 #include <vector>
 #include "edge.h"
 
+
+
 namespace ml_graph {
 
-    template<typename T>
+    template<class T>
     class Graph {
         // element i of edge_vect represent the outgoing edges
         // of i-esim node
@@ -85,5 +87,6 @@ namespace ml_graph {
 
         // TODO
     };
+
 }
 

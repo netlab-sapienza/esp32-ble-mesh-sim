@@ -10,9 +10,9 @@
 namespace ml_dev_node {
     class Dev_node {
 
-        Dev_node(int num);
 
     public:
+        Dev_node(int num);
         int numero;
 
         //todo

@@ -11,13 +11,11 @@
 
 namespace ml_graph {
     class Edge {
-        Edge(int8_t* src_id, int8_t* dest_id, unsigned int weight);
     public:
+        Edge(int8_t* src_id, int8_t* dest_id, unsigned int weight);
         int8_t src;
         int8_t dest;
         unsigned int weight;
-
-
         friend std::ostream &operator<<( std::ostream &output, const Edge &Ed );
     };
 
