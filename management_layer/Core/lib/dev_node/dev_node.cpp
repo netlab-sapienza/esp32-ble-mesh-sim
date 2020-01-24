@@ -9,4 +9,13 @@ namespace ml_dev_node {
         numero = num;
     }
 
+    std::ostream &operator<<( std::ostream &output, const Dev_node &Dn ) {
+
+        output << " Dev_node-> numero: " << Dn.numero << " ";
+        return output;
+
+    }
+
+
 }
+
