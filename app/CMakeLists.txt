@@ -3,11 +3,10 @@
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-
-message(STATUS "Project dir: ${PROJECT_SOURCE_DIR}")
-
+find_package(Threads)
 
 add_executable(thread_main thread_routine.cpp)
-target_link_libraries(thread_main LINK_PUBLIC Firmware Master Slave Kernel)
+target_link_libraries(thread_main LINK_PUBLIC Firmware Master Slave Kernel
+  ${CMAKE_THREAD_LIBS_INIT})
 
 

@@ -113,5 +113,13 @@ uint8_t has_ended_scanning() {
   return 0;
 }
 
+/*
+ * kernel handler for simulator purposes.
+ * The function will act as event handler for
+ * signals and pipes coming from the sim-core.
+ */
+void __kernel_handler(void) {
+  return;
+}
 
 

@@ -83,3 +83,12 @@ void becomeServer(); // If no servers were found during the scanning let the cli
 
 
 uint8_t has_ended_scanning();
+
+
+
+/*
+ * kernel handler for simulator purposes.
+ * The function will act as event handler for
+ * signals and pipes coming from the sim-core.
+ */
+void __kernel_handler(void);
