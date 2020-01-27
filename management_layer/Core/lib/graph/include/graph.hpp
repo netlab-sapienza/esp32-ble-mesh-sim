@@ -101,6 +101,7 @@ namespace ml_graph {
         //todo: eliminare il cout quando riconvertiamo a int8_t
         std::cout << *node_mac <<" " << *node_data <<std::endl;
         client_vect[*node_mac] = node_data;
+        edge_mat[*node_mac];
 
 
         /*typename std::unordered_map<int, T*>::iterator iter;
@@ -121,18 +122,39 @@ namespace ml_graph {
     int Graph<T>::add_server(int *node_mac, T *node_data){
         //todo: eliminare il cout quando riconvertiamo a int8_t
         std::cout << *node_mac <<" " << *node_data <<std::endl;
+
         server_vect[*node_mac] = node_data;
+        edge_mat[*node_mac];
         return 0;
     }
 
     template<class T>
     int Graph<T>::add_edge(int *t_src, int *t_dest,Edge* Ed) {
+
         std::map<int, std::map<int, Edge*>>::iterator it1;
         std::map<int, std::map<int, Edge*>>::iterator it2;
         it1 = edge_mat.find(*t_src);
         it2 = edge_mat.find(*t_dest);
 
-        if(it1 != edge_mat.end()){
+        if(it1 != edge_mat.end() && it2 != edge_mat.end()) {
+            std::map<int, Edge*>::iterator it_inner1;
+            std::map<int, Edge*>::iterator it_inner2;
+            it_inner1 = (it1->second).find(*t_dest);
+            it_inner2 = (it2->second).find(*t_src);
+            if(it_inner1 != (it1->second).end() || it_inner2 != (it2->second).end()){
+                //edge already existing or asymmetric error
+                return -1;
+            }
+
+            (it1->second)[*t_dest] = Ed;
+            (it2->second)[*t_src] = Ed;
+        }
+        else {
+            return -1; //nodes don't exist
+        }
+        return 0;
+
+        /*if(it1 != edge_mat.end()){
             std::map<int, Edge*>::iterator it_inner1;
             it_inner1 = (it1->second).find(*t_dest);
             if(it_inner1 != (it1->second).end())
@@ -165,26 +187,61 @@ namespace ml_graph {
             edge_mat[*t_dest] = temp2;
         }
 
-        return 0;
+        return 0;*/
 
     }
 
     template<class T>
-    int Graph<T>::remove_client_node(int *node_mac) {
-        int del_clients = client_vect.erase(*node_mac);
+    int Graph<T>::remove_client_node(int* node_mac) {
 
+        int del_clients = client_vect.erase(*node_mac);
         if (del_clients != 1) {
             return -1;
         }
 
+        std::map<int, std::map<int, Edge*>>::iterator it1;
+        it1 = edge_mat.find(*node_mac);
+        if ( it1 != edge_mat.end() ){
+            std::map<int, Edge*>::iterator it_inner1;
 
+            for(it_inner1 =  (it1 -> second).begin(); it_inner1 != (it1 -> second).end(); it_inner1++)
+            {
+                Graph<T>::remove_edge(node_mac, new int(it_inner1->first));
+            }
+            edge_mat.erase(it1);
 
+        }
+        else {
+            return -1; //there should always be an entry in  the edge_mat for that node
+        }
 
+        return 0;
     }
 
     template<class T>
     int Graph<T>::remove_server_node(int *node_mac) {
         int del_servers = server_vect.erase(*node_mac);
+        if (del_servers != 1) {
+            return -1;
+        }
+
+        std::map<int, std::map<int, Edge*>>::iterator it1;
+        it1 = edge_mat.find(*node_mac);
+        if ( it1 != edge_mat.end() ){
+            std::map<int, Edge*>::iterator it_inner1;
+
+            for(it_inner1 =  (it1 -> second).begin(); it_inner1 != (it1 -> second).end(); it_inner1++)
+            {
+                Graph<T>::remove_edge(node_mac, new int(it_inner1->first));
+            }
+            edge_mat.erase(it1);
+
+        }
+        else {
+            return -1; //there should always be an entry in  the edge_mat for that node
+        }
+
+        return 0;
 
     }
 
@@ -205,13 +262,6 @@ namespace ml_graph {
                 (it1->second).erase(it_inner1);
                 (it2->second).erase(it_inner2);
 
-                if((it1->second).empty()){
-                    edge_mat.erase(it1);
-                }
-                if((it2->second).empty()){
-                    edge_mat.erase(it2);
-                }
-
                 return 0;
             }
             else {
@@ -219,10 +269,8 @@ namespace ml_graph {
             }
         }
         else {
-            return -1; //non-existing edge or asymmetry error
+            return -1; //non-existing nodes or asymmetry error
         }
-
-        return 0;
     }
 
     template<class T>

@@ -24,27 +24,33 @@ namespace ml_core {
         int gig = 5;
         network_graph.add_client(&gig,&dummy_node);
 
-        ml_graph::Edge eggio( 7);
 
-        network_graph.add_edge(new int(12),new int(44),&eggio);
-
-        ml_graph::Edge eggio2( 99);
-
-        network_graph.add_edge(new int(00),new int(11),&eggio2);
-
-        ml_graph::Edge eggio3( 6);
-
-        network_graph.add_edge(new int(00),new int(44),&eggio3);
+        network_graph.add_client(new int(12),&dummy_node);
+        network_graph.add_client(new int(44),&dummy_node);
+        network_graph.add_client(new int(00),&dummy_node);
+        network_graph.add_client(new int(11),&dummy_node);
+        network_graph.add_client(new int(55),&dummy_node);
+        std::cout <<"*** 1 grafo vuoto*** "<<std::endl;
         network_graph.printGraph();
 
+        ml_graph::Edge eggio( 7);
+        network_graph.add_edge(new int(12),new int(44),&eggio);
+        ml_graph::Edge eggio2( 99);
+        network_graph.add_edge(new int(00),new int(11),&eggio2);
+        ml_graph::Edge eggio3( 6);
+        network_graph.add_edge(new int(00),new int(44),&eggio3);
         network_graph.add_edge(new int(55),new int(44),&eggio3);
+        network_graph.add_edge(new int(12),new int(55),&eggio3);
+        std::cout <<"*** 2 secondo grafo*** "<<std::endl;
         network_graph.printGraph();
 
        /* network_graph.remove_edge(new int(55),new int(44));
         std::cout <<"***new graph*** "<<std::endl;
         network_graph.printGraph();*/
 
-        network_graph.remove_client_node(new int(675));
+        network_graph.remove_client_node(new int(0));
+        std::cout <<"***new graph*** "<<std::endl;
+        network_graph.printGraph();
 
     }
 
