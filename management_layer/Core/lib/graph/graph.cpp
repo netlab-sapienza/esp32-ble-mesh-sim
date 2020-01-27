@@ -4,8 +4,16 @@
 
 #include "graph.hpp"
 
+
+
 namespace ml_graph {
-    Graph::Graph() {
+
+
+
+
+    void TemporaryFunction ()
+    {
+        Graph<int> TempObj;
     }
 
 }
