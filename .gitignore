@@ -87,6 +87,8 @@ compile_commands.json
 CTestTestfile.cmake
 _deps
 ./build/
+./cmake-build-debug/
+./.idea/
 ### CMake Patch ###
 # External projects
 *-prefix/

@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="esp32-ble-mesh-sim"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\device\;CMake Files\device\lib\;CMake Files\device\lib\flogging\;CMake Files\device\lib\fkernel\;CMake Files\device\extern\;CMake Files\device\extern\esp32-ble-mesh\;CMake Files\device\extern\esp32-ble-mesh\components\;CMake Files\device\extern\esp32-ble-mesh\components\bemesh\;CMake Files\device\extern\esp32-ble-mesh\components\bemesh\callbacks\;CMake Files\device\extern\esp32-ble-mesh\components\bemesh\common\;CMake Files\device\extern\esp32-ble-mesh\components\bemesh\mid-tier\;CMake Files\device\extern\esp32-ble-mesh\components\bemesh\master\;CMake Files\device\extern\esp32-ble-mesh\components\bemesh\slave\;CMake Files\device\extern\esp32-ble-mesh\components\bemesh\firmware\;CMake Files\management_layer\;CMake Files\management_layer\Core\;CMake Files\management_layer\Core\lib\;CMake Files\management_layer\Core\lib\graph\;CMake Files\management_layer\Device_API\;CMake Files\management_layer\UI_API\;CMake Files\user_interface\;CMake Files\app\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="EspLog">
+				<Option output="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/lib/flogging/libEspLog.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/lib/flogging"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/lib/flogging/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/lib/flogging/Makefile&quot;  VERBOSE=1 EspLog"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/lib/flogging/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/lib/flogging/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/lib/flogging/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="EspLog/fast">
+				<Option output="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/lib/flogging/libEspLog.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/lib/flogging"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/lib/flogging/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/lib/flogging/Makefile&quot;  VERBOSE=1 EspLog/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/lib/flogging/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/lib/flogging/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/lib/flogging/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Kernel">
+				<Option output="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/lib/fkernel/libKernel.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/lib/fkernel"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/lib/fkernel/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/lib/fkernel/Makefile&quot;  VERBOSE=1 Kernel"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/lib/fkernel/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/lib/fkernel/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/lib/fkernel/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Kernel/fast">
+				<Option output="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/lib/fkernel/libKernel.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/lib/fkernel"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/lib/fkernel/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/lib/fkernel/Makefile&quot;  VERBOSE=1 Kernel/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/lib/fkernel/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/lib/fkernel/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/lib/fkernel/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Common">
+				<Option output="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/common/libCommon.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/common"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/common/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/lib/flogging/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/lib/fkernel/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/mid-tier/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/common/Makefile&quot;  VERBOSE=1 Common"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/common/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/common/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/common/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Common/fast">
+				<Option output="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/common/libCommon.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/common"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/common/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/lib/flogging/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/lib/fkernel/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/mid-tier/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/common/Makefile&quot;  VERBOSE=1 Common/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/common/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/common/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/common/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Routing">
+				<Option output="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/mid-tier/libRouting.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/mid-tier"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/mid-tier/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/mid-tier/Makefile&quot;  VERBOSE=1 Routing"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/mid-tier/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/mid-tier/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/mid-tier/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Routing/fast">
+				<Option output="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/mid-tier/libRouting.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/mid-tier"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/mid-tier/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/mid-tier/Makefile&quot;  VERBOSE=1 Routing/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/mid-tier/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/mid-tier/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/mid-tier/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Master">
+				<Option output="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/master/libMaster.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/master"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/master/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/lib/fkernel/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/lib/flogging/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/common/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/mid-tier/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/master/Makefile&quot;  VERBOSE=1 Master"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/master/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/master/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/master/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Master/fast">
+				<Option output="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/master/libMaster.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/master"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/master/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/lib/fkernel/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/lib/flogging/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/common/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/mid-tier/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/master/Makefile&quot;  VERBOSE=1 Master/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/master/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/master/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/master/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Slave">
+				<Option output="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/slave/libSlave.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/slave"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/slave/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/lib/fkernel/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/lib/flogging/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/mid-tier/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/common/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/slave/Makefile&quot;  VERBOSE=1 Slave"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/slave/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/slave/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/slave/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Slave/fast">
+				<Option output="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/slave/libSlave.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/slave"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/slave/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/lib/fkernel/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/lib/flogging/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/mid-tier/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/common/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/slave/Makefile&quot;  VERBOSE=1 Slave/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/slave/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/slave/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/slave/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Callbacks">
+				<Option output="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/callbacks/libCallbacks.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/callbacks"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/callbacks/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/lib/fkernel/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/lib/flogging/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/common/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/mid-tier/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/master/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/slave/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/callbacks/Makefile&quot;  VERBOSE=1 Callbacks"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/callbacks/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/callbacks/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/callbacks/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Callbacks/fast">
+				<Option output="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/callbacks/libCallbacks.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/callbacks"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/callbacks/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/lib/fkernel/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/lib/flogging/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/common/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/mid-tier/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/master/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/slave/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/callbacks/Makefile&quot;  VERBOSE=1 Callbacks/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/callbacks/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/callbacks/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/callbacks/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Firmware">
+				<Option output="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/firmware/libFirmware.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/firmware"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/firmware/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/lib/flogging/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/lib/fkernel/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/master/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/common/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/mid-tier/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/slave/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/callbacks/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/firmware/Makefile&quot;  VERBOSE=1 Firmware"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/firmware/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/firmware/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/firmware/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Firmware/fast">
+				<Option output="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/firmware/libFirmware.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/firmware"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/firmware/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/lib/flogging/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/lib/fkernel/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/master/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/common/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/mid-tier/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/slave/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/callbacks/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/firmware/Makefile&quot;  VERBOSE=1 Firmware/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/firmware/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/firmware/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/device/extern/esp32-ble-mesh/components/bemesh/firmware/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Ml_Core">
+				<Option output="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/management_layer/Core/libMl_Core.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/management_layer/Core"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/management_layer/Core/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/management_layer/Core/lib/graph/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/management_layer/Core/Makefile&quot;  VERBOSE=1 Ml_Core"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/management_layer/Core/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/management_layer/Core/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/management_layer/Core/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Ml_Core/fast">
+				<Option output="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/management_layer/Core/libMl_Core.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/management_layer/Core"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/management_layer/Core/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/management_layer/Core/lib/graph/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/management_layer/Core/Makefile&quot;  VERBOSE=1 Ml_Core/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/management_layer/Core/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/management_layer/Core/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/management_layer/Core/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Ml_Graph">
+				<Option output="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/management_layer/Core/lib/graph/libMl_Graph.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/management_layer/Core/lib/graph"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/management_layer/Core/lib/graph/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/management_layer/Core/lib/graph/Makefile&quot;  VERBOSE=1 Ml_Graph"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/management_layer/Core/lib/graph/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/management_layer/Core/lib/graph/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/management_layer/Core/lib/graph/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Ml_Graph/fast">
+				<Option output="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/management_layer/Core/lib/graph/libMl_Graph.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/management_layer/Core/lib/graph"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/management_layer/Core/lib/graph/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/management_layer/Core/lib/graph/Makefile&quot;  VERBOSE=1 Ml_Graph/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/management_layer/Core/lib/graph/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/management_layer/Core/lib/graph/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/management_layer/Core/lib/graph/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="thread_main">
+				<Option output="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/app/thread_main" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/app"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/firmware/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/lib/flogging/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/lib/fkernel/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/master/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/common/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/mid-tier/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/slave/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/callbacks/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/management_layer/Core/lib/graph/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/management_layer/Core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/app/Makefile&quot;  VERBOSE=1 thread_main"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/app/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/app/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/app/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="thread_main/fast">
+				<Option output="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/app/thread_main" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/app"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/firmware/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/lib/flogging/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/lib/fkernel/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/master/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/common/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/mid-tier/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/slave/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/callbacks/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/management_layer/Core/lib/graph/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/management_layer/Core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/app/Makefile&quot;  VERBOSE=1 thread_main/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/app/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/app/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/francesco/esp/esp32-ble-mesh-sim/cmake-build-debug/app/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/app/thread_routine.cpp">
+			<Option target="thread_main"/>
+		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/callbacks/callbacks.cpp">
+			<Option target="Callbacks"/>
+		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/common/common.cpp">
+			<Option target="Common"/>
+		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/firmware/firmware.cpp">
+			<Option target="Firmware"/>
+		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/master/master.cpp">
+			<Option target="Master"/>
+		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/mid-tier/bemesh_messages_v2.cpp">
+			<Option target="Routing"/>
+		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/mid-tier/message_handler_v2.cpp">
+			<Option target="Routing"/>
+		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/mid-tier/routing.cpp">
+			<Option target="Routing"/>
+		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/mid-tier/rtable.cpp">
+			<Option target="Routing"/>
+		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/slave/slave.cpp">
+			<Option target="Slave"/>
+		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/device/lib/fkernel/fcallbacks.c">
+			<Option target="Kernel"/>
+		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/device/lib/fkernel/ftasks.c">
+			<Option target="Kernel"/>
+		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/device/lib/fkernel/kernel.c">
+			<Option target="Kernel"/>
+		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/device/lib/flogging/esp_log.c">
+			<Option target="EspLog"/>
+		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/management_layer/Core/core.cpp">
+			<Option target="Ml_Core"/>
+		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/management_layer/Core/lib/graph/edge.cpp">
+			<Option target="Ml_Graph"/>
+		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/management_layer/Core/lib/graph/graph.cpp">
+			<Option target="Ml_Graph"/>
+		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/management_layer/Core/lib/graph/node.cpp">
+			<Option target="Ml_Graph"/>
+		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/device/lib/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\device\lib\"/>
+		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/device/lib/flogging/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\device\lib\flogging\"/>
+		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/device/lib/fkernel/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\device\lib\fkernel\"/>
+		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/callbacks/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\device\extern\esp32-ble-mesh\components\bemesh\callbacks\"/>
+		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/common/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\device\extern\esp32-ble-mesh\components\bemesh\common\"/>
+		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/mid-tier/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\device\extern\esp32-ble-mesh\components\bemesh\mid-tier\"/>
+		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/master/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\device\extern\esp32-ble-mesh\components\bemesh\master\"/>
+		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/slave/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\device\extern\esp32-ble-mesh\components\bemesh\slave\"/>
+		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/firmware/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\device\extern\esp32-ble-mesh\components\bemesh\firmware\"/>
+		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/management_layer/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\management_layer\"/>
+		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/management_layer/Core/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\management_layer\Core\"/>
+		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/management_layer/Core/lib/graph/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\management_layer\Core\lib\graph\"/>
+		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/management_layer/Device_API/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\management_layer\Device_API\"/>
+		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/management_layer/UI_API/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\management_layer\UI_API\"/>
+		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/user_interface/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\user_interface\"/>
+		</Unit>
+		<Unit filename="/home/francesco/esp/esp32-ble-mesh-sim/app/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\app\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
