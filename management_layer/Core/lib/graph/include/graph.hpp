@@ -51,9 +51,9 @@ namespace ml_graph {
          *   0 if succesful
          *   -1 otherwise
          */
-        int remove_client_node(int* node_mac, T *node_data);
+        int remove_client_node(int* node_mac);
 
-        int remove_server_node(int* node_mac, T *node_data);
+        int remove_server_node(int* node_mac);
 
         /*
          * remove the edge going from t_src node to t_dest node.
@@ -131,48 +131,97 @@ namespace ml_graph {
         std::map<int, std::map<int, Edge*>>::iterator it2;
         it1 = edge_mat.find(*t_src);
         it2 = edge_mat.find(*t_dest);
+
+        if(it1 != edge_mat.end()){
+            std::map<int, Edge*>::iterator it_inner1;
+            it_inner1 = (it1->second).find(*t_dest);
+            if(it_inner1 != (it1->second).end())
+                return -1; //edge already existing
+        }
+
+        if(it2 != edge_mat.end()){
+            std::map<int, Edge*>::iterator it_inner2;
+            it_inner2 = (it2->second).find(*t_src);
+            if(it_inner2 != (it2->second).end())
+                return -1; //edge already existing
+        }
+
+        if(it1 != edge_mat.end()){
+            (it1->second)[*t_dest] = Ed;
+        }
+        else{
+            std::map<int, Edge*> temp1;
+            temp1[*t_dest] = Ed;
+            edge_mat[*t_src] = temp1;
+        }
+
+
+        if(it2 != edge_mat.end()){
+            (it2->second)[*t_src] = Ed;
+        }
+        else{
+            std::map<int, Edge*> temp2;
+            temp2[*t_src] = Ed;
+            edge_mat[*t_dest] = temp2;
+        }
+
+        return 0;
+
+    }
+
+    template<class T>
+    int Graph<T>::remove_client_node(int *node_mac) {
+        int del_clients = client_vect.erase(*node_mac);
+
+        if (del_clients != 1) {
+            return -1;
+        }
+
+
+
+
+    }
+
+    template<class T>
+    int Graph<T>::remove_server_node(int *node_mac) {
+        int del_servers = server_vect.erase(*node_mac);
+
+    }
+
+    template<class T>
+    int Graph<T>::remove_edge(int *t_src, int *t_dest){
+
+        std::map<int, std::map<int, Edge*>>::iterator it1;
+        std::map<int, std::map<int, Edge*>>::iterator it2;
+        it1 = edge_mat.find(*t_src);
+        it2 = edge_mat.find(*t_dest);
         if( it1 != edge_mat.end() && it2 != edge_mat.end()) {
             std::map<int, Edge*>::iterator it_inner1;
             it_inner1 = (it1->second).find(*t_dest);
             std::map<int, Edge*>::iterator it_inner2;
             it_inner2 = (it2->second).find(*t_src);
 
-            if (it_inner1 == (it1->second).end() || it_inner2 == (it2->second).end()){
-                (it1->second)[*t_dest] = Ed;
-                (it2->second)[*t_src] = Ed;
+            if (it_inner1 != (it1->second).end() && it_inner2 != (it2->second).end()){
+                (it1->second).erase(it_inner1);
+                (it2->second).erase(it_inner2);
+
+                if((it1->second).empty()){
+                    edge_mat.erase(it1);
+                }
+                if((it2->second).empty()){
+                    edge_mat.erase(it2);
+                }
+
+                return 0;
             }
             else {
-                return -1; // there is already an edge between src and dest, or an asymmetry error
+                return -1; //non-existing edge or an asymmetry error
             }
         }
-        else if  ( it1 == edge_mat.end() && it2 == edge_mat.end()){
-            std::map<int, Edge*> temp1;
-            temp1[*t_dest] = Ed;
-            edge_mat[*t_src] = temp1;
-
-            std::map<int, Edge*> temp2;
-            temp2[*t_src] = Ed;
-            edge_mat[*t_dest] = temp2;
-        }
         else {
-            return -1; //asymmetry error
+            return -1; //non-existing edge or asymmetry error
         }
 
-        return 0;
-    }
-
-    template<class T>
-    int Graph<T>::remove_client_node(int *node_mac, T *node_data) {
-        return 0;
-    }
-
-    template<class T>
-    int Graph<T>::remove_server_node(int *node_mac, T *node_data) {
-        return 0;
-    }
-
-    template<class T>
-    int Graph<T>::remove_edge(int *t_src, int *t_dest){
         return 0;
     }
 

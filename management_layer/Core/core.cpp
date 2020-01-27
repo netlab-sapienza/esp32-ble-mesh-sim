@@ -37,6 +37,15 @@ namespace ml_core {
         network_graph.add_edge(new int(00),new int(44),&eggio3);
         network_graph.printGraph();
 
+        network_graph.add_edge(new int(55),new int(44),&eggio3);
+        network_graph.printGraph();
+
+       /* network_graph.remove_edge(new int(55),new int(44));
+        std::cout <<"***new graph*** "<<std::endl;
+        network_graph.printGraph();*/
+
+        network_graph.remove_client_node(new int(675));
+
     }
 
 
