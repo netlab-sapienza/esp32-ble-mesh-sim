@@ -19,9 +19,7 @@ add_subdirectory("${ESP32_LIBS_PATH}/slave")
 add_subdirectory("${ESP32_LIBS_PATH}/callbacks")
 add_subdirectory("${ESP32_LIBS_PATH}/firmware")
 
-add_subdirectory("./management_layer/Core")
-add_subdirectory("./management_layer/Device_API")
-add_subdirectory("./management_layer/UI_API")
+add_subdirectory("./management_layer")
 add_subdirectory("./user_interface")
 add_subdirectory("./app")
 

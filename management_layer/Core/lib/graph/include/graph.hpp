@@ -11,6 +11,7 @@
 
 namespace ml_graph {
 
+
     template<class T>
     class Graph {
         // element i of edge_vect represent the outgoing edges
@@ -22,59 +23,36 @@ namespace ml_graph {
         std::unordered_map<int, T*> client_vect;
         //std::size_t num_nodes;
 
-    public:
+        static Graph *network_graph;
         Graph();
 
-        /*
-         * add a new node in the graph.
-         * Returns:
-         *   positive integer representing the ID of the node if succesful
-         *   negative integer if an error occurred
-         */
+    public:
+        static Graph *getNetwork_graph() {
+            if (!network_graph)
+                network_graph = new Graph();
+            return network_graph;
+        }
+
         int add_client(int* node_mac, T *node_data);
 
         int add_server(int* node_mac, T *node_data);
 
-        /*
-         * add a new edge between two existing nodes
-         * Returns:
-         *   0 if succesful
-         *   -1 otherwise
-         */
+
         int add_edge(int* t_src, int *t_dest, Edge* Ed);
 
-        /*
-         * remove the node identified by t_id index in the data_vect
-         * and all edges related to him.
-         * ISSUE: how do you remove incoming edges ???
-         * Returns:
-         *   0 if succesful
-         *   -1 otherwise
-         */
+
         int remove_client_node(int* node_mac);
 
         int remove_server_node(int* node_mac);
 
-        /*
-         * remove the edge going from t_src node to t_dest node.
-         * Returns:
-         *   0 if succesful
-         *   -1 otherwise
-         */
         int remove_edge(int *t_src, int *t_dest);
 
-        /*
-         * Returns the list of available nodes
-         */
+
         std::vector<int> active_clients(void) const;
 
         std::vector<int> active_servers(void) const;
 
-        /*
-         * Returns:
-         *   0 if t_id exists
-         *   -1 otherwise
-         */
+
         std::vector<T *> scan() const;
 
         //UI side
@@ -85,14 +63,15 @@ namespace ml_graph {
 
         void printGraph();
 
-
     };
 
-    //TODO
+    template<class T>
+    Graph<T>* Graph<T>::network_graph = 0;
+
 
     template<class T>
     Graph<T>::Graph() {
-        std::cout << "Costruisco \n";
+        std::cout << "Building Network Graph... \n";
     }
 
 
@@ -102,20 +81,7 @@ namespace ml_graph {
         std::cout << *node_mac <<" " << *node_data <<std::endl;
         client_vect[*node_mac] = node_data;
         edge_mat[*node_mac];
-
-
-        /*typename std::unordered_map<int, T*>::iterator iter;
-
-        std::cout << "KEY\tELEMENT" << std::endl;
-        for (iter = client_vect.begin(); iter != client_vect.end(); iter++)
-        {
-            std::cout << iter->first;
-            std::cout << '\t' << *(iter->second) << '\n'
-                 << std::endl;
-        }*/
-
         return 0;
-
     }
 
     template<class T>
@@ -153,41 +119,6 @@ namespace ml_graph {
             return -1; //nodes don't exist
         }
         return 0;
-
-        /*if(it1 != edge_mat.end()){
-            std::map<int, Edge*>::iterator it_inner1;
-            it_inner1 = (it1->second).find(*t_dest);
-            if(it_inner1 != (it1->second).end())
-                return -1; //edge already existing
-        }
-
-        if(it2 != edge_mat.end()){
-            std::map<int, Edge*>::iterator it_inner2;
-            it_inner2 = (it2->second).find(*t_src);
-            if(it_inner2 != (it2->second).end())
-                return -1; //edge already existing
-        }
-
-        if(it1 != edge_mat.end()){
-            (it1->second)[*t_dest] = Ed;
-        }
-        else{
-            std::map<int, Edge*> temp1;
-            temp1[*t_dest] = Ed;
-            edge_mat[*t_src] = temp1;
-        }
-
-
-        if(it2 != edge_mat.end()){
-            (it2->second)[*t_src] = Ed;
-        }
-        else{
-            std::map<int, Edge*> temp2;
-            temp2[*t_src] = Ed;
-            edge_mat[*t_dest] = temp2;
-        }
-
-        return 0;*/
 
     }
 

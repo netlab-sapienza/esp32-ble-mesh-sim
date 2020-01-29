@@ -8,6 +8,11 @@
 #include <iostream>
 
 namespace ml_core {
+    void initializeCore(); //app (or user_interface) should call it in the beginning
+
+
+
+
     void coreDummy();
 }
 

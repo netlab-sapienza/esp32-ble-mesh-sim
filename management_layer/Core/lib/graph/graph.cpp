@@ -8,12 +8,4 @@
 
 namespace ml_graph {
 
-
-
-
-    void TemporaryFunction ()
-    {
-        Graph<int> TempObj;
-    }
-
 }

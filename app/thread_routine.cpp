@@ -4,8 +4,9 @@
 
 #include <iostream>
 #include <cstdio>
-#include "core.h"
+//#include "core.h"
 #include "firmware.hpp"
+#include <ui_api.h>
 
 
 #include <thread>
@@ -31,7 +32,14 @@ void child_function(void) {
 }
 
 int main(int argc, char** argv) {
-  int pid = fork();
+    //ml_core::coreDummy();
+    std::pair<unsigned int,unsigned int> coord(4,4);
+    ui_api::create_environment_randomic(2,2,coord);
+
+
+
+
+/*  int pid = fork();
   if(pid) {
     child_function();
   } else {
@@ -41,6 +49,6 @@ int main(int argc, char** argv) {
     }
     wait(nullptr);
     return 0;
-  }
+  }*/
 }
 
