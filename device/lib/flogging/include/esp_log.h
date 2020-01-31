@@ -11,7 +11,7 @@
 #include <stdarg.h>
 
 #define GATTC_TAG "GATT_CLIENT"
-#define GATTS_TAG "GATT_CLIENT"
+#define GATTS_TAG "GATT_SERVER"
 
 void ESP_LOGI(char const* tag, char* format, ...);
 void ESP_LOGE(char const* tag, char* format, ...);
