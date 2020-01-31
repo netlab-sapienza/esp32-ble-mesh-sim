@@ -6,7 +6,7 @@
 
 class IPCMessage {
 public:
-  virtual unserialize(std::istream& istr);
+
 };
 
 class IPCScanRequest : protected IPCMessage {
@@ -17,11 +17,11 @@ class IPCScanResponse : protected IPCMessage {
 
 };
 
-class IPCWrite : protected IPCMessage {
+class IPCWriteChar : protected IPCMessage {
 
 };
 
-class IPCRead : protected IPCMessage {
+class IPCReadChar : protected IPCMessage {
 
 };
 
@@ -33,6 +33,16 @@ class IPCConnectRequest : protected IPCMessage {
 
 };
 
-class IPCConnectAck : protected IPCMessage {
+class IPCConnectResponse : protected IPCMessage {
 
+};
+
+enum IPCMessageType {
+  SCAN_REQUEST,
+  SCAN_RESPONSE,
+  WRITE_MESSAGE,
+  READ_MESSAGE,
+  NOTIFY,
+  CONNECTION_REQUEST,
+  CONNECTION_RESPONSE
 };
