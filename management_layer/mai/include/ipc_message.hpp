@@ -5,10 +5,13 @@
 #pragma once
 
 class IPCMessage {
+protected:
   // Message Type
   IPCMessageType m_type;
   // Source IPC uuid.
   int m_ipc_src;
+  IPCMessage(IPCMessageType t_type, int t_ipc_src):
+    m_type(t_type), m_ipc_src(t_ipc_src);
 public:
   IPCMessageType getType(void) const;
   int getSource(void) const;
@@ -16,15 +19,13 @@ public:
 
 class IPCScanRequest : protected IPCMessage {
 public:
-  IPCScanRequest(int t_uid) : m_type(SCAN_REQUEST),
-			      m_ipc_src(t_uid);
+  IPCScanRequest(int t_uid) : IPCMessage(SCAN_REQUEST, t_uid);
 };
 
 class IPCScanResponse : protected IPCMessage {
   
 public:
-  IPCScanResponse(int t_uid) : m_type(SCAN_RESPONSE),
-			       m_ipc_src(t_uid);
+  IPCScanResponse(int t_uid) : IPCMessage(SCAN_RESPONSE, t_uid);
 };
 
 class IPCWriteChar : protected IPCMessage {
