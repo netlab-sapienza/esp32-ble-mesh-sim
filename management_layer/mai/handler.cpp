@@ -4,7 +4,6 @@
 
 #include "handler.hpp"
 
-
 /* Null, because instance will be initialized on demand. */
 MediumAccessInterface *MediumAccessInterface::instance = nullptr;
 
@@ -16,21 +15,40 @@ MediumAccessInterface *MediumAccessInterface::getInstance() {
   return instance;
 }
 
+/**
+ * <p>
+ * Function responsible of understanding what is coming from an IPC.
+ * After detecting its type, the message will be casted and
+ * forwarded to the core.
+ * </p>
+ * @param ipcMessage message passed from the ipc
+ */
 static void on_ipc_message_received(IPCMessage ipcMessage) {
-  switch (ipcMessage) {
-    case :
-      break;
+  switch (ipcMessage.getType()) {
+  case IPCMessageType::SCAN_REQUEST:
+    break;
 
-    case :
-      break;
-    case :
-      break;
+  case IPCMessageType::SCAN_RESPONSE:
+    break;
 
-    default:
-      throw
+  case IPCMessageType::WRITE_CHAR:
+    break;
+
+  case IPCMessageType::READ_CHAR:
+    break;
+
+  case IPCMessageType::NOTIFY:
+    break;
+
+  case IPCMessageType::CONNECTION_REQUEST:
+    break;
+
+  case IPCMessageType::CONNECTION_RESPONSE:
+    break;
+
+  default:
+    return;
   }
-
-
 };
 
 MediumAccessInterface::MediumAccessInterface() = default;
