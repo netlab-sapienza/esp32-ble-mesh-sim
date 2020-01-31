@@ -5,28 +5,32 @@
 #include "handler.hpp"
 
 
-class Singleton {
-  private:
-  /* Here will be the instance stored. */
-  static Singleton *instance;
-
-  /* Private constructor to prevent instancing. */
-  Singleton();
-
-  public:
-  /* Static access method. */
-  static Singleton *getInstance();
-};
-
 /* Null, because instance will be initialized on demand. */
-Singleton *Singleton::instance = 0;
+MediumAccessInterface *MediumAccessInterface::instance = nullptr;
 
-Singleton *Singleton::getInstance() {
-  if (instance == 0) {
-    instance = new Singleton();
+MediumAccessInterface *MediumAccessInterface::getInstance() {
+  if (instance == nullptr) {
+    instance = new MediumAccessInterface();
   }
 
   return instance;
 }
 
-Singleton::Singleton() {}
+static void on_ipc_message_received(IPCMessage ipcMessage) {
+  switch (ipcMessage) {
+    case :
+      break;
+
+    case :
+      break;
+    case :
+      break;
+
+    default:
+      throw
+  }
+
+
+};
+
+MediumAccessInterface::MediumAccessInterface() = default;
