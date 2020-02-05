@@ -75,13 +75,13 @@ namespace ml_graph {
 
     };
 
-    template<class T>
-    Graph<T>* Graph<T>::network_graph = 0;
+    /*template<class T>
+    Graph<T>* Graph<T>::network_graph = 0;*/
 
 
     template<class T>
     Graph<T>::Graph() {
-        std::cout << "Building Network Graph... \n";
+        std::cout << "Building Generic Graph... \n";
     }
 
 

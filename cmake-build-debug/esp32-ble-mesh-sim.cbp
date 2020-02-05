@@ -535,6 +535,7 @@
 					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/callbacks/include"/>
 					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/management_layer/libs/dev_node/include"/>
 					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/management_layer/Core/lib/device_graph/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/management_layer/Core/lib/graph/include"/>
 					<Add directory="/usr/include/c++/7"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
 					<Add directory="/usr/include/c++/7/backward"/>
@@ -569,6 +570,7 @@
 					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/device/extern/esp32-ble-mesh/components/bemesh/callbacks/include"/>
 					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/management_layer/libs/dev_node/include"/>
 					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/management_layer/Core/lib/device_graph/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/management_layer/Core/lib/graph/include"/>
 					<Add directory="/usr/include/c++/7"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
 					<Add directory="/usr/include/c++/7/backward"/>
@@ -642,6 +644,7 @@
 				<Compiler>
 					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/management_layer/Core/lib/device_graph/include"/>
 					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/management_layer/libs/dev_node/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/management_layer/Core/lib/graph/include"/>
 					<Add directory="/usr/include/c++/7"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
 					<Add directory="/usr/include/c++/7/backward"/>
@@ -667,6 +670,7 @@
 				<Compiler>
 					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/management_layer/Core/lib/device_graph/include"/>
 					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/management_layer/libs/dev_node/include"/>
+					<Add directory="/home/francesco/esp/esp32-ble-mesh-sim/management_layer/Core/lib/graph/include"/>
 					<Add directory="/usr/include/c++/7"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
 					<Add directory="/usr/include/c++/7/backward"/>

@@ -7,20 +7,45 @@
 #include "include/device_graph.hpp"
 
 
-namespace ml_connection_graph {
+namespace ml_device_graph {
 
-    DeviceGraph::DeviceGraph(){
+    DeviceGraph *DeviceGraph::network_graph = 0;
+
+    DeviceGraph::DeviceGraph():Graph(){
+        std::cout << "Building Network Graph... \n";
+    }
+
+    void DeviceGraph::add_client() {
 
     }
 
+    void DeviceGraph::add_server() {
 
+    }
 
-   /* static DeviceGraph::DeviceGraph *getNetwork_graph() {
-        if (!network_graph)
-            network_graph = new DeviceGraph();
-        return network_graph;
-    }*/
+    void DeviceGraph::turnoff_client() {
 
+    }
+
+    void DeviceGraph::turnoff_server() {
+
+    }
+
+    void DeviceGraph::switch_to_client() {
+
+    }
+
+    void DeviceGraph::switch_to_server() {
+
+    }
+
+    void DeviceGraph::add_connection() {
+
+    }
+
+    void DeviceGraph::remove_connection() {
+
+    }
 
 
 }

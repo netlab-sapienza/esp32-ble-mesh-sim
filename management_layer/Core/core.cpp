@@ -3,8 +3,10 @@
 //
 
 
+#include <edge.h>
 #include "core.h"
 #include "dev_node.h"
+#include "device_graph.hpp"
 
 namespace ml_core {
 //int for eventual error codes
@@ -12,6 +14,10 @@ namespace ml_core {
     void initializeCore() {
 
         //1)initialize graph
+
+
+
+
 
         //ml_graph::Graph<ml_dev_node::Dev_node> *network_graph = network_graph->getNetwork_graph();
 
@@ -29,10 +35,11 @@ namespace ml_core {
 
     }
 
-    /*void coreDummy() {
+    void coreDummy() {
         std::cout << "coreDummy" <<std::endl;
 
-        ml_graph::Graph<ml_dev_node::Dev_node> *network_graph = network_graph->getNetwork_graph();
+        //ml_graph::Graph<ml_dev_node::Dev_node> *network_graph = network_graph->getNetwork_graph();
+        ml_device_graph::DeviceGraph *network_graph = network_graph->getNetwork_graph();
 
         ml_dev_node::Dev_node dummy_node(7);
         ml_dev_node::Dev_node dummy_node2(97);
@@ -62,15 +69,15 @@ namespace ml_core {
         std::cout <<"*** 2 secondo grafo*** "<<std::endl;
         network_graph -> printGraph();
 
-       *//* network_graph -> remove_edge(new int(55),new int(44));
-        std::cout <<"***new graph*** "<<std::endl;
-        network_graph -> printGraph();*//*
-
-        network_graph -> remove_client_node(new int(0));
+        // network_graph -> remove_edge(new int(55),new int(44));
         std::cout <<"***new graph*** "<<std::endl;
         network_graph -> printGraph();
 
-    }*/
+
+
+
+
+    }
 
 
 }

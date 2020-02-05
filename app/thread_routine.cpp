@@ -33,7 +33,7 @@ void child_function(void) {
 }
 
 int main(int argc, char** argv) {
-    //ml_core::coreDummy();
+    ml_core::coreDummy();
     //ml_core::initializeCore();
 
 
