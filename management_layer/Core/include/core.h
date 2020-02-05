@@ -8,6 +8,8 @@
 #include <iostream>
 
 namespace ml_core {
+    //it should spawn the MAI and manage the communication with it
+    //it should initialize the graph and all the management threads
     void initializeCore(); //app (or user_interface) should call it in the beginning
 
 

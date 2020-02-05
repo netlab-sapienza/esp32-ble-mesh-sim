@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include <cstdio>
-//#include "core.h"
+#include "core.h"
 #include "firmware.hpp"
 #include <ui_api.h>
 
@@ -16,6 +16,7 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <signal.h>
+
 
 void handle_sigusr1(int sig) {
   printf("Received SIGUSR1...\n");
@@ -33,8 +34,12 @@ void child_function(void) {
 
 int main(int argc, char** argv) {
     //ml_core::coreDummy();
-    std::pair<unsigned int,unsigned int> coord(4,4);
-    ui_api::create_environment_randomic(2,2,coord);
+    //ml_core::initializeCore();
+
+
+
+    //std::pair<unsigned int,unsigned int> coord(4,4);
+    //ui_api::create_environment_randomic(2,2,coord);
 
 
 

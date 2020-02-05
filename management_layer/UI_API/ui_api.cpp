@@ -8,12 +8,7 @@
 
 namespace ui_api {
 //int for eventual error codes
-    int initialize_network(int num_nodes,int time_span){
-        std::cout << "UI HW" << std::endl;
-        ml_core::coreDummy();
 
-        return 1;
-    }
     int create_environment_randomic(unsigned int num_nodes,unsigned int time_span,std::pair<unsigned int, unsigned int> field_sizes){
         std::cout << "UI HW "<< std::endl;
 

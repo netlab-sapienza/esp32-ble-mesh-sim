@@ -7,6 +7,9 @@
 #include <vector>
 #include "edge.h"
 
+#include <boost/thread.hpp>
+#include <boost/chrono.hpp>
+
 
 
 namespace ml_graph {
@@ -14,36 +17,43 @@ namespace ml_graph {
 
     template<class T>
     class Graph {
-        // element i of edge_vect represent the outgoing edges
-        // of i-esim node
+
         std::map<int, std::map<int, Edge*>> edge_mat;
-        // Each element of data_vect represent one node. Each node is
-        // identified from it's index in this vector
+
         std::unordered_map<int, T*> server_vect;
         std::unordered_map<int, T*> client_vect;
-        //std::size_t num_nodes;
+
+
+        boost::shared_mutex mutex_edge_mat;
+        boost::shared_mutex mutex_server_vect;
+        boost::shared_mutex mutex_client_vect;
+
 
         static Graph *network_graph;
+    public:
         Graph();
 
-    public:
-        static Graph *getNetwork_graph() {
+
+        /*static Graph *getNetwork_graph() {
             if (!network_graph)
                 network_graph = new Graph();
             return network_graph;
-        }
+        }*/
 
-        int add_client(int* node_mac, T *node_data);
+        int add_client_node(int* node_mac, T *node_data);
 
-        int add_server(int* node_mac, T *node_data);
-
-
-        int add_edge(int* t_src, int *t_dest, Edge* Ed);
-
+        int add_server_node(int* node_mac, T *node_data);
 
         int remove_client_node(int* node_mac);
 
         int remove_server_node(int* node_mac);
+
+        int update_client_node(int* node_mac);
+
+        int update_server_node(int* node_mac);
+
+
+        int add_edge(int* t_src, int *t_dest, Edge* Ed);
 
         int remove_edge(int *t_src, int *t_dest);
 
@@ -76,7 +86,7 @@ namespace ml_graph {
 
 
     template<class T>
-    int Graph<T>::add_client(int* node_mac, T *node_data){
+    int Graph<T>::add_client_node(int* node_mac, T *node_data){
         //todo: eliminare il cout quando riconvertiamo a int8_t
         std::cout << *node_mac <<" " << *node_data <<std::endl;
         client_vect[*node_mac] = node_data;
@@ -85,41 +95,13 @@ namespace ml_graph {
     }
 
     template<class T>
-    int Graph<T>::add_server(int *node_mac, T *node_data){
+    int Graph<T>::add_server_node(int *node_mac, T *node_data){
         //todo: eliminare il cout quando riconvertiamo a int8_t
         std::cout << *node_mac <<" " << *node_data <<std::endl;
 
         server_vect[*node_mac] = node_data;
         edge_mat[*node_mac];
         return 0;
-    }
-
-    template<class T>
-    int Graph<T>::add_edge(int *t_src, int *t_dest,Edge* Ed) {
-
-        std::map<int, std::map<int, Edge*>>::iterator it1;
-        std::map<int, std::map<int, Edge*>>::iterator it2;
-        it1 = edge_mat.find(*t_src);
-        it2 = edge_mat.find(*t_dest);
-
-        if(it1 != edge_mat.end() && it2 != edge_mat.end()) {
-            std::map<int, Edge*>::iterator it_inner1;
-            std::map<int, Edge*>::iterator it_inner2;
-            it_inner1 = (it1->second).find(*t_dest);
-            it_inner2 = (it2->second).find(*t_src);
-            if(it_inner1 != (it1->second).end() || it_inner2 != (it2->second).end()){
-                //edge already existing or asymmetric error
-                return -1;
-            }
-
-            (it1->second)[*t_dest] = Ed;
-            (it2->second)[*t_src] = Ed;
-        }
-        else {
-            return -1; //nodes don't exist
-        }
-        return 0;
-
     }
 
     template<class T>
@@ -172,6 +154,44 @@ namespace ml_graph {
             return -1; //there should always be an entry in  the edge_mat for that node
         }
 
+        return 0;
+
+    }
+
+    template<class T>
+    int Graph<T>::update_client_node(int *node_mac) {
+        return 0;
+    }
+
+    template<class T>
+    int Graph<T>::update_server_node(int *node_mac) {
+        return 0;
+    }
+
+    template<class T>
+    int Graph<T>::add_edge(int *t_src, int *t_dest,Edge* Ed) {
+
+        std::map<int, std::map<int, Edge*>>::iterator it1;
+        std::map<int, std::map<int, Edge*>>::iterator it2;
+        it1 = edge_mat.find(*t_src);
+        it2 = edge_mat.find(*t_dest);
+
+        if(it1 != edge_mat.end() && it2 != edge_mat.end()) {
+            std::map<int, Edge*>::iterator it_inner1;
+            std::map<int, Edge*>::iterator it_inner2;
+            it_inner1 = (it1->second).find(*t_dest);
+            it_inner2 = (it2->second).find(*t_src);
+            if(it_inner1 != (it1->second).end() || it_inner2 != (it2->second).end()){
+                //edge already existing or asymmetric error
+                return -1;
+            }
+
+            (it1->second)[*t_dest] = Ed;
+            (it2->second)[*t_src] = Ed;
+        }
+        else {
+            return -1; //nodes don't exist
+        }
         return 0;
 
     }
@@ -252,6 +272,8 @@ namespace ml_graph {
             std::cout<<std::endl;
         }
     }
+
+
 
 }
 
