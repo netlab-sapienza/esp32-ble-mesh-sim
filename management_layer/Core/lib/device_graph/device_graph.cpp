@@ -21,6 +21,21 @@ namespace ml_device_graph {
         boost::optional<ml_dev_node::Dev_node*>  res = get_server_node(node_mac);
         if(res){
             ml_dev_node::Dev_node* dev = res.get();
+            int success = remove_server_node(node_mac);
+            if(success) {
+                success = add_client_node(node_mac,dev);
+                if(success) {
+                    return 0;
+                }
+                else {
+                    return -1; //no server found
+                }
+            }
+            else {
+                return -1; //no server found
+            }
+
+
             //std::cout <<"***olone*** "<< *dev <<std::endl;
 
         }

@@ -16,6 +16,7 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <signal.h>
+#include <boost/thread.hpp>
 
 
 void handle_sigusr1(int sig) {
@@ -33,7 +34,12 @@ void child_function(void) {
 }
 
 int main(int argc, char** argv) {
-    ml_core::coreDummy();
+
+    boost::thread workerThread(ml_core::coreDummy);
+    workerThread.join();
+
+
+    //ml_core::coreDummy();
     //ml_core::initializeCore();
 
 

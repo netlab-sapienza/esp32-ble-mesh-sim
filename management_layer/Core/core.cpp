@@ -64,23 +64,24 @@ namespace ml_core {
         ml_graph::Edge eggio2( 99);
         network_graph -> add_connection(new int(00),new int(11),&eggio2);
         ml_graph::Edge eggio3( 6);
-        network_graph -> add_connection(new int(00),new int(44),&eggio3);
+        network_graph -> add_connection(new int(00),new int(88),&eggio3);
         network_graph -> add_connection(new int(55),new int(44),&eggio3);
-        network_graph -> add_connection(new int(12),new int(55),&eggio3);
+        network_graph -> add_connection(new int(88),new int(55),&eggio3);
         std::cout <<"*** 2 secondo grafo*** "<<std::endl;
         network_graph -> printGraph();
 
         // network_graph -> remove_connection(new int(55),new int(44));
-        std::cout <<"***new graph*** "<<std::endl;
-        network_graph -> printGraph();
+
 
        /* ml_dev_node::Dev_node luigio = network_graph->get_client_node(new int(12));
 
         std::cout <<"***olone*** "<< luigio <<std::endl;*/
 
         network_graph->switch_to_client(new int(88));
+        std::cout <<"***new graph*** "<<std::endl;
+        network_graph -> printGraph();
 
-
+        std::cout <<"***FINE*** "<<std::endl;
 
 
 

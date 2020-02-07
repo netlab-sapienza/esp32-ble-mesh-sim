@@ -170,16 +170,18 @@ namespace ml_graph {
         }
 
         std::map<int, std::map<int, Edge*>>::iterator it1;
-        upgrade_lock_t lock_em(mutex_edge_mat);
+        read_lock_t  lock_em(mutex_edge_mat);
         it1 = edge_mat.find(*node_mac);
         if ( it1 != edge_mat.end() ){
             std::map<int, Edge*>::iterator it_inner1;
+
+            lock_em.unlock();
 
             for(it_inner1 =  (it1 -> second).begin(); it_inner1 != (it1 -> second).end(); it_inner1++)
             {
                 Graph<T>::remove_connection(node_mac, new int(it_inner1->first));
             }
-            upgrade_to_unique_lock_t uniqueLock(lock_em);
+            write_lock_t lock_em(mutex_edge_mat);
 
             edge_mat.erase(it1);
             lock_em.unlock();
@@ -254,6 +256,7 @@ namespace ml_graph {
                 (it1->second).erase(it_inner1);
                 (it2->second).erase(it_inner2);
 
+                lock_em.release();
                 return 0;
             }
             else {
