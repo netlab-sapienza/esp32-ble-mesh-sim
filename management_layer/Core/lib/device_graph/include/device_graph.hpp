@@ -31,7 +31,11 @@ class DeviceGraph: public ml_graph::Graph<ml_dev_node::Dev_node> {
             return network_graph;
         }
 
-        void add_client();
+        int switch_to_client(int *node_mac);
+
+        int switch_to_server(int *node_mac);
+
+       /* void add_client_node();
 
         void add_server();
 
@@ -39,14 +43,12 @@ class DeviceGraph: public ml_graph::Graph<ml_dev_node::Dev_node> {
 
         void turnoff_server();
 
-        void switch_to_client();
 
-        void switch_to_server();
 
 
         void add_connection();
 
-        void remove_connection();
+        void remove_connection();*/
     };
 
 }

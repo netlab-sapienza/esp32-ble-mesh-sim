@@ -55,23 +55,32 @@ namespace ml_core {
         network_graph->add_client_node(new int(00), &dummy_node);
         network_graph->add_client_node(new int(11), &dummy_node);
         network_graph->add_client_node(new int(55), &dummy_node);
+        network_graph->add_server_node(new int(88), &dummy_node);
         std::cout <<"*** 1 grafo vuoto*** "<<std::endl;
         network_graph -> printGraph();
 
         ml_graph::Edge eggio( 7);
-        network_graph -> add_edge(new int(12),new int(44),&eggio);
+        network_graph -> add_connection(new int(12),new int(44),&eggio);
         ml_graph::Edge eggio2( 99);
-        network_graph -> add_edge(new int(00),new int(11),&eggio2);
+        network_graph -> add_connection(new int(00),new int(11),&eggio2);
         ml_graph::Edge eggio3( 6);
-        network_graph -> add_edge(new int(00),new int(44),&eggio3);
-        network_graph -> add_edge(new int(55),new int(44),&eggio3);
-        network_graph -> add_edge(new int(12),new int(55),&eggio3);
+        network_graph -> add_connection(new int(00),new int(44),&eggio3);
+        network_graph -> add_connection(new int(55),new int(44),&eggio3);
+        network_graph -> add_connection(new int(12),new int(55),&eggio3);
         std::cout <<"*** 2 secondo grafo*** "<<std::endl;
         network_graph -> printGraph();
 
-        // network_graph -> remove_edge(new int(55),new int(44));
+        // network_graph -> remove_connection(new int(55),new int(44));
         std::cout <<"***new graph*** "<<std::endl;
         network_graph -> printGraph();
+
+       /* ml_dev_node::Dev_node luigio = network_graph->get_client_node(new int(12));
+
+        std::cout <<"***olone*** "<< luigio <<std::endl;*/
+
+        network_graph->switch_to_client(new int(88));
+
+
 
 
 
