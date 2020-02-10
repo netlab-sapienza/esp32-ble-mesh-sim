@@ -50,19 +50,14 @@ namespace ml_graph {
             return network_graph;
         }*/
 
-
-
-
-
-
         int add_client_node(int* node_mac, T *node_data);
         int add_server_node(int* node_mac, T *node_data);
 
         int remove_client_node(int* node_mac);
         int remove_server_node(int* node_mac);
 
-        int update_client_node(int* node_mac);
-        int update_server_node(int* node_mac);
+        int update_client_node(int* node_mac,T *node_data);
+        int update_server_node(int* node_mac,T *node_data);
 
         boost::optional<T*> get_client_node(int* node_mac);
         boost::optional<T*> get_server_node(int* node_mac);
@@ -74,9 +69,9 @@ namespace ml_graph {
 
 
 
-        std::vector<int> active_clients(void) const;
+        std::vector<int> active_clients() const;
 
-        std::vector<int> active_servers(void) const;
+        std::vector<int> active_servers() const;
 
 
         std::vector<T *> scan() const;
@@ -87,7 +82,13 @@ namespace ml_graph {
 
         std::vector<int, T *> *get_connections(int node);
 
+        //UI side debug
+
         void printGraph();
+
+        void printClients();
+
+        void printServers();
 
     };
 
@@ -104,7 +105,7 @@ namespace ml_graph {
     template<class T>
     int Graph<T>::add_client_node(int* node_mac, T *node_data){
         //todo: eliminare il cout quando riconvertiamo a int8_t
-        std::cout << *node_mac <<" " << *node_data <<std::endl;
+        std::cout <<"add_client_node " << *node_mac <<" " << *node_data <<std::endl;
         write_lock_t lock_cv(mutex_client_vect);
         client_vect[*node_mac] = node_data;
         lock_cv.unlock();
@@ -131,22 +132,24 @@ namespace ml_graph {
 
         write_lock_t lock_cv(mutex_client_vect);
         int del_clients = client_vect.erase(*node_mac);
+        lock_cv.unlock();
         if (del_clients != 1) {
             return -1;
         }
-        lock_cv.unlock();
-        read_lock_t lock_em(mutex_edge_mat);
+
         std::map<int, std::map<int, Edge*>>::iterator it1;
+        read_lock_t lock_em(mutex_edge_mat);
 
         it1 = edge_mat.find(*node_mac);
         if ( it1 != edge_mat.end() ){
             std::map<int, Edge*>::iterator it_inner1;
+            lock_em.unlock();
 
             for(it_inner1 =  (it1 -> second).begin(); it_inner1 != (it1 -> second).end(); it_inner1++)
             {
                 Graph<T>::remove_connection(node_mac, new int(it_inner1->first));
             }
-            lock_em.unlock();
+
             write_lock_t lock_em{mutex_edge_mat};
 
             edge_mat.erase(it1);
@@ -181,10 +184,10 @@ namespace ml_graph {
             {
                 Graph<T>::remove_connection(node_mac, new int(it_inner1->first));
             }
-            write_lock_t lock_em(mutex_edge_mat);
+            write_lock_t lock_em2(mutex_edge_mat);
 
             edge_mat.erase(it1);
-            lock_em.unlock();
+            lock_em2.unlock();
 
         }
         else {
@@ -196,12 +199,19 @@ namespace ml_graph {
     }
 
     template<class T>
-    int Graph<T>::update_client_node(int *node_mac) {
+    int Graph<T>::update_client_node(int *node_mac,T *node_data) {
+        write_lock_t lock_cv(mutex_client_vect);
+        client_vect[*node_mac] = node_data;
+        lock_cv.unlock();
+
         return 0;
     }
 
     template<class T>
-    int Graph<T>::update_server_node(int *node_mac) {
+    int Graph<T>::update_server_node(int *node_mac,T *node_data) {
+        write_lock_t lock_sv(mutex_server_vect);
+        server_vect[*node_mac] = node_data;
+        lock_sv.unlock();
         return 0;
     }
 
@@ -228,6 +238,7 @@ namespace ml_graph {
 
             (it1->second)[*t_dest] = Ed;
             (it2->second)[*t_src] = Ed;
+
         }
         else {
             return -1; //nodes don't exist
@@ -277,7 +288,7 @@ namespace ml_graph {
         typename std::unordered_map<int, T*>::iterator it1;
         it1 = client_vect.find(*node_mac);
         if( it1 != client_vect.end()){
-            std::cout<<"LAMADONNA "<< *(it1->second) <<std::endl;
+            std::cout<<"get_client_node retrieved value: "<< *(it1->second) <<std::endl;
             return (it1->second);
         }
         else
@@ -302,13 +313,13 @@ namespace ml_graph {
     }
 
     template<class T>
-    std::vector<int> Graph<T>::active_clients(void) const{
+    std::vector<int> Graph<T>::active_clients() const{
         std::vector<int> temp;
         return  temp;
     }
 
     template<class T>
-    std::vector<int> Graph<T>::active_servers(void) const{
+    std::vector<int> Graph<T>::active_servers() const{
         std::vector<int> temp;
         return  temp;
     }
@@ -354,7 +365,36 @@ namespace ml_graph {
     }
 
 
+    template<class T>
+    void Graph<T>::printClients() {
+        std::cout<< "Print clients \n";
+        typename std::unordered_map<int, T*>::iterator it1;
+        read_lock_t lock_cv(mutex_client_vect);
 
+        for (it1 = client_vect.begin(); it1 != client_vect.end(); it1++)
+        {
+            std::cout<< it1->first <<" ;";
+        }
+        lock_cv.unlock();
+        std::cout<<std::endl;
+
+    }
+
+    template<class T>
+    void Graph<T>::printServers() {
+        std::cout<< "Print servers \n";
+
+        typename std::unordered_map<int, T*>::iterator it1;
+        read_lock_t lock_sv(mutex_server_vect);
+
+        for (it1 = server_vect.begin(); it1 != server_vect.end(); it1++)
+        {
+            std::cout<< it1->first <<" ;";
+        }
+        lock_sv.unlock();
+        std::cout<<std::endl;
+
+    }
 
 }
 

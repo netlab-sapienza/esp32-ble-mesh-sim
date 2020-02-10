@@ -7,6 +7,7 @@
 #include "core.h"
 #include "dev_node.h"
 #include "device_graph.hpp"
+#include <boost/thread.hpp>
 
 namespace ml_core {
 //int for eventual error codes
@@ -35,6 +36,10 @@ namespace ml_core {
 
     }
 
+    void switchS();
+
+    void switchC();
+
     void coreDummy() {
         std::cout << "coreDummy" <<std::endl;
 
@@ -44,6 +49,8 @@ namespace ml_core {
         ml_dev_node::Dev_node dummy_node(7);
         ml_dev_node::Dev_node dummy_node2(97);
 
+        dummy_node2.setPosition(std::pair<float, float>(3,2) );
+
         std::cout << "dummynode" << dummy_node <<std::endl;
 
         int gig = 5;
@@ -51,7 +58,7 @@ namespace ml_core {
 
 
         network_graph->add_client_node(new int(12), &dummy_node);
-        network_graph->add_client_node(new int(44), &dummy_node);
+        network_graph->add_client_node(new int(44), &dummy_node2);
         network_graph->add_client_node(new int(00), &dummy_node);
         network_graph->add_client_node(new int(11), &dummy_node);
         network_graph->add_client_node(new int(55), &dummy_node);
@@ -67,8 +74,10 @@ namespace ml_core {
         network_graph -> add_connection(new int(00),new int(88),&eggio3);
         network_graph -> add_connection(new int(55),new int(44),&eggio3);
         network_graph -> add_connection(new int(88),new int(55),&eggio3);
-        std::cout <<"*** 2 secondo grafo*** "<<std::endl;
+        std::cout << std::endl <<"*** 2 secondo grafo*** "<<std::endl;
         network_graph -> printGraph();
+        network_graph->printClients();
+        network_graph->printServers();
 
         // network_graph -> remove_connection(new int(55),new int(44));
 
@@ -77,16 +86,39 @@ namespace ml_core {
 
         std::cout <<"***olone*** "<< luigio <<std::endl;*/
 
-        network_graph->switch_to_client(new int(88));
-        std::cout <<"***new graph*** "<<std::endl;
+
+
+        //network_graph->switch_to_server(new int(55));
+
+        //network_graph->switch_to_client(new int(88));
+
+        boost::thread t1{switchC};
+        boost::thread t2{switchS};
+        t1.join();
+        t2.join();
+
+
+
+        std::cout << std::endl << std::endl <<"***new graph*** "<<std::endl;
         network_graph -> printGraph();
+        network_graph->printClients();
+        network_graph->printServers();
 
         std::cout <<"***FINE*** "<<std::endl;
 
+    }
 
 
+    void switchS() {
+        ml_device_graph::DeviceGraph *network_graph = network_graph->getNetwork_graph();
 
+        network_graph->switch_to_server(new int(55));
+    }
 
+    void switchC() {
+        ml_device_graph::DeviceGraph *network_graph = network_graph->getNetwork_graph();
+
+        network_graph->switch_to_client(new int(88));
     }
 
 

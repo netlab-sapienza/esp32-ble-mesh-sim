@@ -22,9 +22,9 @@ namespace ml_device_graph {
         if(res){
             ml_dev_node::Dev_node* dev = res.get();
             int success = remove_server_node(node_mac);
-            if(success) {
+            if(success >= 0) {
                 success = add_client_node(node_mac,dev);
-                if(success) {
+                if(success >= 0) {
                     return 0;
                 }
                 else {
@@ -35,24 +35,35 @@ namespace ml_device_graph {
                 return -1; //no server found
             }
 
+        }
+        else {
+            return -1; //no server found
+        }
 
-            //std::cout <<"***olone*** "<< *dev <<std::endl;
+    }
+
+    int DeviceGraph::switch_to_server(int *node_mac) {
+        boost::optional<ml_dev_node::Dev_node*>  res = get_client_node(node_mac);
+        if(res){
+            ml_dev_node::Dev_node* dev = res.get();
+            int success = remove_client_node(node_mac);
+            if(success >= 0) {
+                success = add_server_node(node_mac,dev);
+                if(success >= 0) {
+                    return 0;
+                }
+                else {
+                    return -1; //no server found
+                }
+            }
+            else {
+                return -1; //no server found
+            }
 
         }
         else {
             return -1; //no server found
         }
-        //ml_dev_node::Dev_node* dev = get_client_node(node_mac);
-
-        //std::cout <<"***olone*** "<< *dev <<std::endl;
-
-
-
-        return 0;
-    }
-
-    int DeviceGraph::switch_to_server(int *node_mac) {
-        return 0;
     }
 
 }
